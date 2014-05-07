@@ -8,7 +8,6 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_C_INCLUDES := \
         $(LOCAL_PATH)/cxcore/include
 LOCAL_CFLAGS := $(LOCAL_C_INCLUDES:%=-I%)
-LOCAL_LDLIBS := -L$(SYSROOT)/usr/lib -ldl
 
 LOCAL_SRC_FILES := \
         cxcore/src/cxalloc.cpp \
@@ -56,7 +55,6 @@ LOCAL_C_INCLUDES := \
         $(LOCAL_PATH)/cxcore/src \
         $(LOCAL_PATH)/cv/include
 LOCAL_CFLAGS := $(LOCAL_C_INCLUDES:%=-I%)
-LOCAL_LDLIBS := -L$(SYSROOT)/usr/lib -ldl
 
 LOCAL_SRC_FILES := \
         cv/src/cvaccum.cpp \
@@ -138,7 +136,6 @@ LOCAL_C_INCLUDES := \
         $(LOCAL_PATH)/cxcore/include \
         $(LOCAL_PATH)/cvaux/include
 LOCAL_CFLAGS := $(LOCAL_C_INCLUDES:%=-I%)
-LOCAL_LDLIBS := -L$(SYSROOT)/usr/lib -ldl
 
 LOCAL_SRC_FILES := \
         cvaux/src/camshift.cpp \
@@ -202,7 +199,6 @@ LOCAL_C_INCLUDES := \
         $(LOCAL_PATH)/cxcore/include \
         $(LOCAL_PATH)/ml/include
 LOCAL_CFLAGS := $(LOCAL_C_INCLUDES:%=-I%)
-LOCAL_LDLIBS := -L$(SYSROOT)/usr/lib -ldl
 
 LOCAL_SRC_FILES := \
         ml/src/ml.cpp \
@@ -237,7 +233,6 @@ LOCAL_C_INCLUDES := \
 LOCAL_SHARED_LIBRARIES += libjpeg
 
 LOCAL_CFLAGS := $(LOCAL_C_INCLUDES:%=-I%) -DHAVE_JPEG
-LOCAL_LDLIBS := -L$(SYSROOT)/usr/lib -ldl -ljpeg
 
 LOCAL_SRC_FILES := \
         otherlibs/highgui/bitstrm.cpp \
@@ -268,8 +263,6 @@ LOCAL_MODULE_TAGS := optional
 include $(LOCAL_PATH)/libopencv.mk
 
 LOCAL_CFLAGS := $(LOCAL_C_INCLUDES:%=-I%)
-LOCAL_LDLIBS := -L$(SYSROOT)/usr/lib -ldl -llog \
-                -L$(TARGET_OUT) -lcxcore -lcv -lcvaux -lcvml -lcvhighgui
 
 
 LOCAL_SRC_FILES := \
@@ -279,4 +272,3 @@ LOCAL_SRC_FILES := \
 LOCAL_STATIC_LIBRARIES := libcxcore libcv libcvaux libcvml libcvhighgui
 
 include $(BUILD_STATIC_LIBRARY)
-
